@@ -7,18 +7,18 @@ This repository contains interactive client-side web applications engineered usi
 
 ## 1. Factorial Calculator (`A2_Part1.html`)
 A math utility designed to calculate factorials while enforcing precise entry limits.
-* **Logic:** Computes the mathematical factorial value of an integer $N$.
-* **Validations:** Accepts numbers between 1 and 20; outputs real-time DOM error messages for out-of-range types.
+Logic: Computes the mathematical factorial value of an integer $N$.
+Validations: Accepts numbers between 1 and 20; outputs real-time DOM error messages for out-of-range types.
 
 ## 2. APU Grade System (`A2_Part2.html`)
 An interactive student grade management system mapping scores instantly to university grading marks.
-* **Logic:** Feeds user inputs directly into conditional grade assignment algorithms.
-* **UI Features:** Dynamic data table insertions (`.insertRow()`) with automated form state resets.
-* **Visual Highlights:** Custom translucent status badges (Green for passing grades, Red for `F`).
+Logic: Feeds user inputs directly into conditional grade assignment algorithms.
+UI Features: Dynamic data table insertions (`.insertRow()`) with automated form state resets.
+Visual Highlights: Custom translucent status badges (Green for passing grades, Red for `F`).
 
 ## 🛠️ Skills Demonstrated
 
-* **Dynamic DOM Control:** Reading inputs and modifying element text, styles, and nodes live.
-* **Control Flow structures:** Using `for` loops and branched `if/else` logic to process data.
-* **Data Sanitization:** Filtering out missing values or non-numeric types safely via `isNaN()`.
-* **CSS Grid Layouts:** Creating responsive grid boxes that automatically adapt to mobile devices.
+Dynamic DOM Control: Reading inputs and modifying element text, styles, and nodes live.
+Control Flow structures: Using `for` loops and branched `if/else` logic to process data.
+Data Sanitization: Filtering out missing values or non-numeric types safely via `isNaN()`.
+CSS Grid Layouts: Creating responsive grid boxes that automatically adapt to mobile devices.
