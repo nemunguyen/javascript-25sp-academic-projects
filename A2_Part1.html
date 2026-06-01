@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factorial Calculator</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #b01b27 0%, #b41220 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            color: #f4f4f4;
+        }
+
+        .container {
+            background-color: #ffffff; 
+            padding: 0;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            width: 100%;
+            max-width: 850px;
+            overflow: hidden; 
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .content-body {
+            padding: 40px;
+        }
+
+        .header-section {
+            margin-bottom: 30px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            color: #000000;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: #000000;
+            font-weight: 500;
+            margin-bottom: 6px;
+        }
+
+        h4 {
+            font-size: 0.95rem;
+            color: #d4af37; 
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 16px;
+            align-items: flex-end;
+            margin-bottom: 25px;
+        }
+
+        .input-field {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #000000;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px 16px;
+            background-color: #ffffff;
+            border: 1.5px solid #000000;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            color: #000000;
+            font-family: inherit;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #9c1c21; 
+            box-shadow: 0 0 0 3px rgba(156, 28, 33, 0.3);
+            background-color: #fbfbfb;
+        }
+
+        button {
+            background-color: #7a1216; 
+            color: #ffffff;
+            border: 1px solid #9c1c21;
+            padding: 13px 24px;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            box-shadow: 0 4px 12px rgba(122, 18, 22, 0.3);
+        }
+
+        button:hover {
+            background-color: #9c1c21;
+            box-shadow: 0 4px 16px rgba(156, 28, 33, 0.5);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        /* Result messaging container styling */
+        .output-container {
+            margin-top: 15px;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        #result {
+            color: #166534; /* Elegant subtle dark green for successful execution output */
+        }
+
+        #errorMessage {
+            color: #991b1b; /* Clean matching dark red alert text */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="content-body">
+            <!-- Correct structured headers following the format -->
+            <div class="header-section">
+                <h2>Nguyen Van Phuong Nam - 11423083</h2>
+                <h3>Assignment 2 - Part 01</h3>
+                <h4>Finding the Factorial Value of N</h4>
+            </div>
+            
+            <!-- Grid form block configured identical to Part 2 -->
+            <div class="form-group">
+                <div class="input-field">
+                    <label for="numberInput">Enter a number between 1 and 20</label>
+                    <input type="text" id="numberInput" placeholder="e.g. 5">
+                </div>
+                <button onclick="calculateFactorial()">Find the factorial</button>
+            </div>
+            
+            <!-- Dynamic dynamic text injection wrapper -->
+            <div class="output-container">
+                <p id="result"></p>
+                <p id="errorMessage"></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function calculateFactorial() {
+            const num = document.getElementById("numberInput").value;
+            const resultElement = document.getElementById("result");
+            const errorMessageElement = document.getElementById("errorMessage");
+            resultElement.innerHTML = "";
+            errorMessageElement.innerHTML = "";
+
+            const parsedNum = parseInt(num);
+            if (isNaN(parsedNum)) {
+                errorMessageElement.innerHTML = "Read the Instructions"; 
+                return;
+            }
+
+            if (parsedNum < 1 || parsedNum > 20) {
+                errorMessageElement.innerHTML = `Error, ${num} is out of range`;
+                return;
+            }
+
+            let factorial = 1;
+            for (let i = 1; i <= parsedNum; i++) {
+                factorial *= i;
+            }
+            resultElement.innerHTML = `The Factorial value of ${parsedNum} is ${factorial}`;
+        }
+    </script>
+</body>
+</html>
